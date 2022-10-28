@@ -48,6 +48,7 @@ spec:
   tls:
     - hosts:
         - powerkernel.dev
+        - www.powerkernel.dev
       secretName: powerkernel-dev-cert-tls
   rules:
     - host: powerkernel.dev

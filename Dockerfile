@@ -8,7 +8,7 @@ RUN npm ci
 
 # build
 COPY . .
-RUN npm run build
+RUN NEXT_TELEMETRY_DISABLED=1 npm run build
 
 # start
 CMD ["npm", "start"]

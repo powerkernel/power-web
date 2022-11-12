@@ -30,6 +30,7 @@ jobs:
       - run: npm test
 
   build:
+    if: github.event_name != 'pull_request'
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -76,6 +77,7 @@ jobs:
           cache-to: type=gha,mode=max
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: self-hosted
     steps:

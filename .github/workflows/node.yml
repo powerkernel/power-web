@@ -63,7 +63,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Build and push (prod)
-        if: github.ref_name != 'main'
+        if: startsWith(github.ref_name, 'v')
         uses: docker/build-push-action@v3
         with:
           context: .

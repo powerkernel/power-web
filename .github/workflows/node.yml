@@ -7,9 +7,30 @@ on:
   push:
     branches: [main]
     tags: [v*]
+  pull_request:
+    branches: [main]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [lts/*]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm test
+
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -77,7 +98,7 @@ jobs:
         uses: azure/k8s-set-context@v3
         with:
           method: kubeconfig
-          kubeconfig: ${{secrets.KUBE_CONFIG}}
+          kubeconfig: ${{secrets.KUBE_CONFIG_PROD}}
 
       - name: Deploy to the Kubernetes cluster (staging)
         if: github.ref_name == 'main'
@@ -90,7 +111,7 @@ jobs:
         with:
           namespace: powerkernel-com
           manifests: |
-            k8s/power-web-depl.yml
+            k8s/prod-depl.yml
           strategy: basic
           images: |
             ghcr.io/${{github.repository}}:${{github.ref_name}}

@@ -46,7 +46,7 @@ jobs:
 
   build:
     if: github.event_name != 'pull_request'
-    needs: test
+    needs: ["test", "e2e"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

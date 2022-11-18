@@ -1,0 +1,8 @@
+{
+  "yaml.schemas": {
+    "https://rainswords.com/k8s.json": [
+      "file:///Users/harry/projects/powerkernel/powerkernel.com/power-web/k8s/prod-depl.yml",
+      "file:///Users/harry/projects/powerkernel/powerkernel.com/power-web/k8s/staging-depl.yml"
+    ]
+  }
+}

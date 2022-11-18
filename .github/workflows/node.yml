@@ -24,10 +24,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - run: npm ci
       - run: npm test
+      - run: npm run e2e
 
   build:
     if: github.event_name != 'pull_request'

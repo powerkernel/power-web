@@ -1,6 +1,5 @@
-import Head from 'next/head';
-import Image from 'next/image';
-
+import Head from "next/head";
+import Image from "next/image";
 export default function Home() {
   return (
     <>
@@ -10,7 +9,10 @@ export default function Home() {
           name="description"
           content="Providing IT solutions such as customized system development, web design & development, and IT related consultation"
         />
-        <meta name="keywords" content="powerkernel, power, kernel, web development, design, consultation"></meta>
+        <meta
+          name="keywords"
+          content="powerkernel, power, kernel, web development, design, consultation"
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -27,8 +29,10 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center py-5">
-            Providing IT solutions such as customized system development, web design & development, and IT related
-            consultation..
+            <p>
+              Providing IT solutions such as customized system development, web
+              design & development, and IT related consultation.
+            </p>
           </div>
 
           <div className="flex justify-center">
@@ -40,7 +44,9 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex justify-center py-5 text-xs text-gray-300">Version: 0.1.0-alpha.3</div>
+          <div className="flex justify-center py-5 text-xs text-gray-300">
+            Version: 0.1.0-alpha.3
+          </div>
         </div>
       </div>
     </>

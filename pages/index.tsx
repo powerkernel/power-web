@@ -29,7 +29,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center py-5">
-            <p>
+            <p className="hero">
               Providing IT solutions such as customized system development, web
               design & development, and IT related consultation.
             </p>

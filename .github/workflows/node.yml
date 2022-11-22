@@ -17,10 +17,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Use Node.js 16
+      - name: Use Node.js LTS
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: lts/*
           cache: "npm"
 
       - run: npm ci
@@ -29,10 +29,10 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - name: Use Node.js 16
+      - name: Use Node.js LTS
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: lts/*
 
       - name: Checkout
         uses: actions/checkout@v3

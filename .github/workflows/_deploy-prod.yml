@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  deploy:
+  prod:
     runs-on: self-hosted
     steps:
       - name: Checkout source code

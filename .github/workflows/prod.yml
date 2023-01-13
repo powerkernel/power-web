@@ -9,17 +9,17 @@ on:
 
 jobs:
   install:
-    uses: ./.github/workflows/install.yml
+    uses: ./.github/workflows/_install.yml
 
   test:
     needs: install
-    uses: ./.github/workflows/testing.yml
+    uses: ./.github/workflows/_test.yml
 
   build:
     needs: test
-    uses: ./.github/workflows/build-prod.yml
+    uses: ./.github/workflows/_build-prod.yml
 
   deploy:
     needs: build
-    uses: ./.github/workflows/deploy-prod.yml
+    uses: ./.github/workflows/_deploy-prod.yml
     secrets: inherit

@@ -22,3 +22,4 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/deploy-staging.yml
+    secrets: inherit

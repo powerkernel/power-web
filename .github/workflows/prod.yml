@@ -22,3 +22,4 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/deploy-prod.yml
+    secrets: inherit

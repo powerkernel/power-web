@@ -20,6 +20,6 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{secrets.KUBE_CONFIG_STAGING}}
 
-      - name: Deploy to the Kubernetes cluster (staging)
+      - name: Deploy to the Kubernetes cluster
         run: |
           ${{ steps.install-kubectl.outputs.kubectl-path }} rollout restart deploy power-web-depl -n powerkernel-dev

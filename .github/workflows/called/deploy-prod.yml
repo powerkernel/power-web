@@ -15,14 +15,12 @@ jobs:
         id: install-kubectl
 
       - name: Set the Kubernetes context
-        if: startsWith(github.ref_name, 'v')
         uses: azure/k8s-set-context@v3
         with:
           method: kubeconfig
           kubeconfig: ${{secrets.KUBE_CONFIG_PROD}}
 
       - name: Deploy to the Kubernetes cluster
-        if: startsWith(github.ref_name, 'v')
         uses: azure/k8s-deploy@v4
         with:
           namespace: powerkernel-com

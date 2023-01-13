@@ -1,11 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node CI Staging
+name: Node CI Production
 
 on:
   push:
-    branches: [main]
+    tags: [v*]
 
 jobs:
   install:
@@ -17,8 +17,8 @@ jobs:
 
   build:
     needs: test
-    uses: ./.github/workflows/called/build.yml
+    uses: ./.github/workflows/called/build-prod.yml
 
   deploy:
     needs: build
-    uses: ./.github/workflows/called/deploy-staging.yml
+    uses: ./.github/workflows/called/deploy-prod.yml

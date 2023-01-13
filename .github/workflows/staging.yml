@@ -17,7 +17,7 @@ jobs:
 
   build:
     needs: test
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/build-staging.yml
 
   deploy:
     needs: build

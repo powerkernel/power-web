@@ -9,12 +9,12 @@ on:
 
 jobs:
   install:
-    uses: ./.github/workflows/install.yml
+    uses: ./.github/workflows/_install.yml
 
   test:
     needs: install
-    uses: ./.github/workflows/test.yml
+    uses: ./.github/workflows/_test.yml
 
   build:
     needs: test
-    uses: ./.github/workflows/build-pr.yml
+    uses: ./.github/workflows/_build-pr.yml

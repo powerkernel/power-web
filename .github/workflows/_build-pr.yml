@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  pull_request:
+  feature:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,6 +32,6 @@ jobs:
           context: .
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: ghcr.io/${{github.repository}}:${{steps.slug.outputs.outputs.branch-name-slug}}
+          tags: ghcr.io/${{github.repository}}:${{steps.slug.outputs.branch-name-slug}}
           cache-from: type=gha
           cache-to: type=gha,mode=max

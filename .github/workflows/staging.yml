@@ -1,0 +1,29 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node CI
+
+on:
+  push:
+    branches: [main]
+    tags: [v*]
+  pull_request:
+    branches: [main]
+
+jobs:
+  install:
+    uses: ./.github/workflows/install.yml
+
+  test:
+    needs: install
+    uses: ./.github/workflows/testing.yml
+
+  build:
+    if: github.event_name != 'pull_request'
+    needs: ["test"]
+    uses: ./.github/workflows/build.yml
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    uses: ./.github/workflows/deploy-staging.yml

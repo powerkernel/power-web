@@ -9,16 +9,16 @@ on:
 
 jobs:
   install:
-    uses: ./.github/workflows/called/install.yml
+    uses: ./.github/workflows/install.yml
 
   test:
     needs: install
-    uses: ./.github/workflows/called/testing.yml
+    uses: ./.github/workflows/testing.yml
 
   build:
     needs: test
-    uses: ./.github/workflows/called/build.yml
+    uses: ./.github/workflows/build.yml
 
   deploy:
     needs: build
-    uses: ./.github/workflows/called/deploy-staging.yml
+    uses: ./.github/workflows/deploy-staging.yml

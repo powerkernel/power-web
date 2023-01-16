@@ -12,17 +12,19 @@ on:
 
 jobs:
   install:
-    uses: ./.github/workflows/_install.yml
+    uses: powerkernel/actions-workflows/.github/workflows/install-npm.yml@main
 
   test:
     needs: install
     uses: ./.github/workflows/_test.yml
-
   build:
     needs: test
     uses: powerkernel/actions-workflows/.github/workflows/build-staging.yml@main
 
   deploy:
     needs: build
-    uses: ./.github/workflows/_deploy-staging.yml
+    uses: powerkernel/actions-workflows/.github/workflows/deploy-staging.yml@main
+    with:
+      namespace: powerkernel-dev
+      deployment: power-web-depl
     secrets: inherit

@@ -20,7 +20,7 @@ jobs:
 
   build:
     needs: test
-    uses: ./.github/workflows/_build-staging.yml
+    uses: powerkernel/actions-workflows/build-staging.yml@main
 
   deploy:
     needs: build

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/powerkernel/power-web/compare/v0.1.3...v0.1.4) (2023-01-16)
+
+
+### Bug Fixes
+
+* **ci:** typo ([1a368b5](https://github.com/powerkernel/power-web/commit/1a368b5eeaddf38c467cb69d5afb8eae95fbe133))
+
 ### [0.1.3](https://github.com/powerkernel/power-web/compare/v0.1.2...v0.1.3) (2023-01-16)
 
 

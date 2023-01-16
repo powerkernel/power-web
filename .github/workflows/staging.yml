@@ -16,7 +16,7 @@ jobs:
 
   test:
     needs: install
-    uses: ./.github/workflows/_test.yml
+    uses: ./.github/workflows/test.yml
   build:
     needs: test
     uses: powerkernel/actions-workflows/.github/workflows/build-staging.yml@main

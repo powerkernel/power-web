@@ -1,6 +1,6 @@
 # Power Web
 
-[![Node CI](https://github.com/powerkernel/power-web/actions/workflows/node.yml/badge.svg)](https://github.com/powerkernel/power-web/actions/workflows/node.yml)
+[![Building](https://github.com/powerkernel/power-web/actions/workflows/staging.yml/badge.svg)](https://github.com/powerkernel/power-web/actions/workflows/staging.yml)
 
 To run the development server:
 

@@ -27,7 +27,7 @@ jobs:
     needs: build
     uses: powerkernel/actions-workflows/.github/workflows/deploy-production.yml@main
     with:
-      namespace: powerkernel-com
+      namespace: powerkernel-prod
       yaml-path: k8s/prod.depl.yml
     secrets:
       KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_PROD }}

@@ -20,4 +20,4 @@ jobs:
     uses: powerkernel/actions-workflows/.github/workflows/build-feature.yml@main
     with:
       username: ${{ github.actor }}
-      password: ${{ secrets.GITHUB_TOKEN }}
+      password: ${{ github.token }}

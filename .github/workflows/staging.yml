@@ -31,4 +31,5 @@ jobs:
     with:
       namespace: powerkernel-staging
       deployment: power-web-depl
-      kubeconfig: ${{ secrets.KUBE_CONFIG_STAGING }}
+    secrets:
+      KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_STAGING }}

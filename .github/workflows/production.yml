@@ -18,11 +18,14 @@ jobs:
   build:
     needs: test
     uses: powerkernel/actions-workflows/.github/workflows/build-production.yml@main
+    with:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
     uses: powerkernel/actions-workflows/.github/workflows/deploy-production.yml@main
     with:
       namespace: powerkernel-com
-      yaml-path: k8s/depl-production.yml
-    secrets: inherit
+      yaml-path: k8s/prod.depl.yml
+      kubeconfig: ${{ secrets.KUBE_CONFIG_PROD }}

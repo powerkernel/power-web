@@ -17,9 +17,13 @@ jobs:
   test:
     needs: install
     uses: ./.github/workflows/testing.yml
+
   build:
     needs: test
     uses: powerkernel/actions-workflows/.github/workflows/build-staging.yml@main
+    with:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
@@ -27,4 +31,4 @@ jobs:
     with:
       namespace: powerkernel-staging
       deployment: power-web-depl
-    secrets: inherit
+      kubeconfig: ${{ secrets.KUBE_CONFIG_STAGING }}

@@ -45,7 +45,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center py-5 text-xs text-gray-300">
-            Version: 0.1.4-build.2302101105
+            Version: 0.1.4-build.2302101106
           </div>
         </div>
       </div>

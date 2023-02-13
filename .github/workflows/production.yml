@@ -20,7 +20,7 @@ jobs:
     uses: powerkernel/actions-workflows/.github/workflows/build-production.yml@main
     with:
       username: ${{ github.actor }}
-      password: ${{ secrets.GITHUB_TOKEN }}
+      password: ${{ github.token }}
 
   deploy:
     needs: build

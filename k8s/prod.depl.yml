@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: power-web-depl
-  namespace: powerkernel-dev
+  namespace: powerkernel-com
 spec:
   replicas: 1
   selector:
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: power-web-srv
-  namespace: powerkernel-dev
+  namespace: powerkernel-com
 spec:
   selector:
     app: power-web
@@ -40,19 +40,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: power-web-ingress-service
-  namespace: powerkernel-dev
+  namespace: powerkernel-com
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
-    nginx.ingress.kubernetes.io/whitelist-source-range: 144.21.59.206/32,2603:c020:c001:bb48:a79b:1d9d:22f9:c85a/128
-    nginx.ingress.kubernetes.io/from-to-www-redirect: 'true'
+    cert-manager.io/cluster-issuer: zerossl-cluster-issuer
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   tls:
     - hosts:
-        - powerkernel.dev
-        - www.powerkernel.dev
-      secretName: powerkernel-dev-cert-tls
+        - powerkernel.com
+        - www.powerkernel.com
+      secretName: power-web-cert-tls
   rules:
-    - host: powerkernel.dev
+    - host: powerkernel.com
       http:
         paths:
           - path: /

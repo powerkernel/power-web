@@ -25,6 +25,6 @@ jobs:
     needs: build
     uses: powerkernel/actions-workflows/.github/workflows/deploy-staging.yml@main
     with:
-      namespace: powerkernel-dev
+      namespace: powerkernel-staging
       deployment: power-web-depl
     secrets: inherit

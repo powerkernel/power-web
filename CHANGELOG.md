@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/powerkernel/power-web/compare/v0.1.4...v0.1.5) (2023-02-13)
+
+
+### Bug Fixes
+
+* **ci:** uses password as secret env ([8173018](https://github.com/powerkernel/power-web/commit/8173018afd721208584bd09b386bae77894383c3))
+
 ### [0.1.4](https://github.com/powerkernel/power-web/compare/v0.1.3...v0.1.4) (2023-01-16)
 
 

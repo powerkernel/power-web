@@ -8,17 +8,5 @@ on:
     branches: [main]
 
 jobs:
-  install:
-    uses: powerkernel/actions-workflows/.github/workflows/install-npm.yml@main
-
   test:
-    needs: install
-    uses: ./.github/workflows/testing.yml
-
-  build:
-    needs: test
-    uses: powerkernel/actions-workflows/.github/workflows/build-feature.yml@main
-    with:
-      username: ${{ github.actor }}
-    secrets:
-      PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+    uses: ./.github/workflows/testing.yaml

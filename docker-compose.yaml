@@ -1,0 +1,15 @@
+version: "3"
+services:
+  frontend:
+    container_name: web
+    build:
+      context: .
+    image: ghcr.io/powerkernel/power-web:dev
+    command: npm run dev
+    # docker compose run --rm frontend npm run build
+    env_file:
+      - .env.local
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app

@@ -28,7 +28,7 @@
     "eslint": "8.57.1",
     "eslint-config-next": "14.2.24",
     "husky": "8.0.3",
-    "postcss": "8.5.2",
+    "postcss": "8.5.3",
     "prettier": "3.5.1",
     "start-server-and-test": "2.0.10",
     "tailwindcss": "3.4.17",
